@@ -50,6 +50,18 @@
             overflow-x: hidden;
         }
 
+        /* Subtle top accent bar */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--electric-cyan) 0%, var(--emerald-green) 33%, var(--vivid-gold) 66%, var(--electric-cyan) 100%);
+            z-index: 9999;
+        }
+
         /* Typography */
         h1, h2, h3 {
             font-family: 'Bebas Neue', sans-serif;
@@ -172,7 +184,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('https://images.unsplash.com/photo-1718720946594-4e0a8b0bfece?w=1920&q=80') center/cover no-repeat; /* Artistic gymnast performing routine */
+            background: url('images/UF_Lights.jpg') center/cover no-repeat; /* Florida Gators arena - phone lights */
             opacity: 0.2;
             filter: grayscale(20%) contrast(1.1);
         }
@@ -340,7 +352,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('https://images.unsplash.com/photo-1571361267-dcac8748d2a1?w=1920&q=80') center/cover no-repeat; /* Woman doing gymnastics stretch */
+            background: url('images/Lexi.jpg') center/cover no-repeat; /* Michigan gymnast celebrating */
             opacity: 0.08;
         }
 
@@ -516,7 +528,7 @@
             right: 0;
             width: 50%;
             height: 100%;
-            background: url('https://images.unsplash.com/photo-1566438480900-0609be27a4be?w=1200&q=80') center/cover no-repeat; /* Gymnast performing */
+            background: url('images/UF_Team.jpg') center/cover no-repeat; /* Florida Gators team */
             opacity: 0.15;
             mask-image: linear-gradient(to left, black, transparent);
             -webkit-mask-image: linear-gradient(to left, black, transparent);
@@ -787,7 +799,7 @@
             right: 0;
             width: 60%;
             height: 100%;
-            background: url('https://images.unsplash.com/photo-1504450758481-7338bbe75c8e?w=1200&q=80') center/cover no-repeat; /* Packed indoor basketball arena with crowd */
+            background: url('images/Ft_Worth_Dickies.jpg') center/cover no-repeat; /* NCAA Championships Fort Worth */
             opacity: 0.12;
             mask-image: linear-gradient(to left, black, transparent 80%);
             -webkit-mask-image: linear-gradient(to left, black, transparent 80%);
@@ -1086,7 +1098,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1920&q=80') center/cover no-repeat; /* Team achieving business success */
+            background: url('images/Michigan_Empty_Gym.jpg') center/cover no-repeat; /* Michigan championship training facility */
             opacity: 0.05;
         }
 
@@ -1232,7 +1244,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('https://images.unsplash.com/photo-1577223625816-7546f13df25d?w=1920&q=80') center/cover no-repeat; /* Sold out arena with cheering crowd */
+            background: url('images/UGA_OU.jpg') center/cover no-repeat; /* Georgia vs Oklahoma dramatic arena */
             opacity: 0.15;
             filter: grayscale(20%);
         }
