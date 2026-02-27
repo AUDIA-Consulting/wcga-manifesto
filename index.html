@@ -1,0 +1,1837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WCGA | Building the Premier Women's Collegiate Sport</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* WCGA OFFICIAL LOGO COLOR */
+            --wcga-teal: #3CC8C4;
+            
+            /* EXPANDED 7-COLOR PALETTE - Bold & Vibrant */
+            --midnight: #0B0F1A;
+            --navy: #1A2744;
+            --electric-magenta: #E91E63;
+            --hot-pink: #FF1B6B;
+            --vivid-gold: #FFB800;
+            --electric-cyan: #00D4FF;
+            --emerald-green: #00C853;
+            --royal-purple: #7C3AED;
+            --pure-white: #FFFFFF;
+            --soft-white: #F0F4F8;
+            --silver: #B8C5D6;
+            
+            /* Gradients */
+            --gradient-fire: linear-gradient(135deg, var(--electric-magenta) 0%, var(--hot-pink) 50%, #FF6B35 100%);
+            --gradient-gold: linear-gradient(135deg, var(--vivid-gold) 0%, #FFC847 50%, #FFE066 100%);
+            --gradient-ocean: linear-gradient(135deg, var(--electric-cyan) 0%, #00B4D8 100%);
+            --gradient-emerald: linear-gradient(135deg, var(--emerald-green) 0%, #00E676 50%, #69F0AE 100%);
+            --gradient-purple: linear-gradient(135deg, var(--royal-purple) 0%, #9C4DFF 50%, #B388FF 100%);
+            --gradient-hero: linear-gradient(135deg, var(--midnight) 0%, var(--navy) 40%, #2A3F5F 100%);
+            --gradient-dramatic: linear-gradient(180deg, rgba(11,15,26,0.95) 0%, rgba(26,39,68,0.85) 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Source Sans 3', sans-serif;
+            background: var(--midnight);
+            color: var(--pure-white);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* Subtle top accent bar */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--wcga-teal) 0%, var(--emerald-green) 33%, var(--vivid-gold) 66%, var(--wcga-teal) 100%);
+            z-index: 9999;
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 0.05em;
+            line-height: 1.1;
+        }
+
+        h4 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+        }
+
+        .section-label {
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            background: var(--gradient-fire);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.5rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: transparent;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        nav.scrolled {
+            background: rgba(11, 15, 26, 0.97);
+            backdrop-filter: blur(20px);
+            padding: 1rem 3rem;
+            box-shadow: 0 4px 30px rgba(233, 30, 99, 0.15);
+        }
+
+        .nav-logo {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            letter-spacing: 0.15em;
+            color: var(--wcga-teal);
+            text-decoration: none;
+            position: relative;
+        }
+
+        .nav-logo span {
+            color: var(--wcga-teal);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--silver);
+            text-decoration: none;
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-fire);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--pure-white);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            background: var(--gradient-hero);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('Dickies-Arena-Dark.jpg') center/cover no-repeat; /* NCAA Championships - dramatic flag */
+            opacity: 0.2;
+            filter: grayscale(20%) contrast(1.1);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(ellipse at 20% 80%, rgba(233, 30, 99, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 20%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 50%, rgba(255, 184, 0, 0.05) 0%, transparent 70%),
+                radial-gradient(ellipse at 10% 30%, rgba(124, 58, 237, 0.08) 0%, transparent 40%),
+                radial-gradient(ellipse at 90% 70%, rgba(0, 200, 83, 0.06) 0%, transparent 40%);
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 300px;
+            background: linear-gradient(to top, var(--midnight), transparent);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1100px;
+            padding: 2rem;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.6rem 2rem;
+            border: 2px solid var(--electric-magenta);
+            background: rgba(233, 30, 99, 0.1);
+            color: var(--pure-white);
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.8s ease forwards, glow 3s ease-in-out infinite;
+            opacity: 0;
+        }
+
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(233, 30, 99, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(233, 30, 99, 0.5), 0 0 60px rgba(233, 30, 99, 0.2); }
+        }
+
+        .hero h1 {
+            font-size: clamp(3.5rem, 12vw, 9rem);
+            color: var(--pure-white);
+            margin-bottom: 1rem;
+            animation: fadeInUp 0.8s ease 0.2s forwards;
+            opacity: 0;
+            text-shadow: 0 0 80px rgba(233, 30, 99, 0.3);
+        }
+
+        .hero h1 span {
+            display: block;
+            background: var(--gradient-fire);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: drop-shadow(0 0 30px rgba(233, 30, 99, 0.4));
+        }
+
+        .hero-tagline {
+            font-size: 1.5rem;
+            color: var(--silver);
+            max-width: 750px;
+            margin: 0 auto 3rem;
+            font-weight: 300;
+            animation: fadeInUp 0.8s ease 0.4s forwards;
+            opacity: 0;
+            line-height: 1.6;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.2rem 3rem;
+            background: var(--gradient-fire);
+            color: var(--pure-white);
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: none;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            animation: fadeInUp 0.8s ease 0.6s forwards;
+            opacity: 0;
+        }
+
+        .hero-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 20px 50px rgba(233, 30, 99, 0.5), 0 0 100px rgba(233, 30, 99, 0.3);
+        }
+
+        .hero-cta:hover::before {
+            left: 100%;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-indicator svg {
+            width: 35px;
+            height: 35px;
+            stroke: var(--electric-magenta);
+            filter: drop-shadow(0 0 10px rgba(233, 30, 99, 0.5));
+        }
+
+        /* Sections */
+        section {
+            padding: 10rem 2rem;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        /* Core Belief */
+        .core-belief {
+            background: var(--midnight);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .core-belief::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('Lexi.jpg') center/cover no-repeat; /* Michigan gymnast celebrating */
+            opacity: 0.08;
+        }
+
+        .core-belief::after {
+            content: '"';
+            position: absolute;
+            top: -150px;
+            left: -80px;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 60vw;
+            background: var(--gradient-fire);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            opacity: 0.08;
+            line-height: 1;
+            pointer-events: none;
+        }
+
+        .belief-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1000px;
+        }
+
+        .belief-statement {
+            font-size: clamp(2.2rem, 5vw, 4rem);
+            font-weight: 300;
+            line-height: 1.35;
+            margin-bottom: 2.5rem;
+            color: var(--pure-white);
+        }
+
+        .belief-statement strong {
+            background: var(--gradient-fire);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 600;
+        }
+
+        .belief-detail {
+            font-size: 1.25rem;
+            color: var(--silver);
+            max-width: 850px;
+            line-height: 1.9;
+        }
+
+        /* Purpose, Vision, Mission */
+        .pvm-section {
+            background: linear-gradient(180deg, var(--midnight) 0%, var(--navy) 100%);
+            position: relative;
+        }
+
+        .pvm-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(ellipse at 0% 50%, rgba(0, 212, 255, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 100% 50%, rgba(255, 184, 0, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 0%, rgba(124, 58, 237, 0.06) 0%, transparent 40%),
+                radial-gradient(ellipse at 50% 100%, rgba(0, 200, 83, 0.05) 0%, transparent 40%);
+        }
+
+        .pvm-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 2.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .pvm-card {
+            padding: 3rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+
+        .pvm-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--gradient-fire);
+            transition: width 0.4s ease;
+        }
+
+        .pvm-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-fire);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: -1;
+        }
+
+        /* REVERSE COLOR HOVER EFFECT */
+        .pvm-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-color: transparent;
+            box-shadow: 0 25px 60px rgba(233, 30, 99, 0.3);
+        }
+
+        .pvm-card:hover::before {
+            width: 100%;
+            opacity: 0;
+        }
+
+        .pvm-card:hover::after {
+            opacity: 1;
+        }
+
+        .pvm-card h3 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--pure-white);
+            transition: all 0.4s ease;
+        }
+
+        .pvm-card:hover h3 {
+            color: var(--midnight);
+        }
+
+        .pvm-card p {
+            color: var(--silver);
+            font-size: 1.15rem;
+            line-height: 1.8;
+            transition: all 0.4s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .pvm-card:hover p {
+            color: var(--midnight);
+        }
+
+        .pvm-card p strong {
+            color: var(--pure-white);
+            font-weight: 600;
+            transition: all 0.4s ease;
+        }
+
+        .pvm-card:hover p strong {
+            color: var(--midnight);
+        }
+
+        /* Mission Details */
+        .mission-full {
+            background: var(--navy);
+            padding: 8rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mission-full::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: url('Dickies-Arena-Floor.jpg') center/cover no-repeat; /* NCAA Championships floor exercise */
+            opacity: 0.15;
+            mask-image: linear-gradient(to left, black, transparent);
+            -webkit-mask-image: linear-gradient(to left, black, transparent);
+        }
+
+        .mission-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .mission-content h2 {
+            font-size: 4rem;
+            margin-bottom: 2.5rem;
+            color: var(--pure-white);
+        }
+
+        .mission-list {
+            list-style: none;
+        }
+
+        .mission-list li {
+            padding: 1.5rem 0;
+            padding-left: 2.5rem;
+            position: relative;
+            font-size: 1.2rem;
+            color: var(--silver);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+
+        .mission-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 1.8rem;
+            width: 10px;
+            height: 10px;
+            background: var(--gradient-fire);
+            border-radius: 50%;
+            transition: all 0.4s ease;
+        }
+
+        .mission-list li:hover {
+            color: var(--pure-white);
+            padding-left: 3rem;
+            background: linear-gradient(90deg, rgba(233, 30, 99, 0.1), transparent);
+        }
+
+        .mission-list li:hover::before {
+            transform: scale(1.5);
+            box-shadow: 0 0 20px rgba(233, 30, 99, 0.6);
+        }
+
+        .mission-callout {
+            margin-top: 4rem;
+            padding: 2.5rem;
+            background: var(--gradient-fire);
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 500;
+            text-align: center;
+            letter-spacing: 0.05em;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mission-callout::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(50%); }
+        }
+
+        /* Values Section */
+        .values-section {
+            background: var(--midnight);
+            padding: 10rem 2rem;
+            position: relative;
+        }
+
+        .values-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(ellipse at 30% 20%, rgba(233, 30, 99, 0.08) 0%, transparent 40%),
+                radial-gradient(ellipse at 70% 80%, rgba(0, 212, 255, 0.06) 0%, transparent 40%),
+                radial-gradient(ellipse at 90% 10%, rgba(255, 184, 0, 0.05) 0%, transparent 30%),
+                radial-gradient(ellipse at 10% 60%, rgba(124, 58, 237, 0.08) 0%, transparent 35%),
+                radial-gradient(ellipse at 50% 90%, rgba(0, 200, 83, 0.06) 0%, transparent 35%);
+        }
+
+        .values-header {
+            text-align: center;
+            margin-bottom: 5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .values-header h2 {
+            font-size: clamp(3rem, 6vw, 5rem);
+            color: var(--pure-white);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .value-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 2.5rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+
+        .value-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-fire);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .value-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-gold);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 0;
+        }
+
+        /* REVERSE COLOR HOVER EFFECT */
+        .value-card:hover {
+            transform: translateY(-10px);
+            border-color: transparent;
+            box-shadow: 0 30px 60px rgba(255, 184, 0, 0.25);
+        }
+
+        .value-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .value-card:hover::after {
+            opacity: 1;
+        }
+
+        .value-card > * {
+            position: relative;
+            z-index: 1;
+            transition: all 0.4s ease;
+        }
+
+        .value-icon {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gradient-fire);
+            transition: all 0.4s ease;
+        }
+
+        .value-card:hover .value-icon {
+            background: var(--midnight);
+        }
+
+        .value-icon svg {
+            width: 28px;
+            height: 28px;
+            stroke: var(--pure-white);
+            fill: none;
+            stroke-width: 2;
+            transition: all 0.4s ease;
+        }
+
+        .value-card:hover .value-icon svg {
+            stroke: var(--vivid-gold);
+        }
+
+        .value-card h3 {
+            font-size: 2rem;
+            color: var(--pure-white);
+            margin-bottom: 0.5rem;
+        }
+
+        .value-card:hover h3 {
+            color: var(--midnight);
+        }
+
+        .value-card h4 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            color: var(--electric-cyan);
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .value-card:hover h4 {
+            color: var(--navy);
+        }
+
+        .value-card p {
+            color: var(--silver);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .value-card:hover p {
+            color: var(--midnight);
+        }
+
+        .value-card p em {
+            display: block;
+            margin-top: 1rem;
+            color: rgba(255,255,255,0.5);
+            font-style: italic;
+            font-size: 0.95rem;
+        }
+
+        .value-card:hover p em {
+            color: rgba(11,15,26,0.7);
+        }
+
+        /* Opportunity Section */
+        .opportunity-section {
+            background: var(--navy);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .opportunity-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60%;
+            height: 100%;
+            background: url('Dickies-Arena-Corner.jpg') center/cover no-repeat; /* NCAA Championships packed arena */
+            opacity: 0.12;
+            mask-image: linear-gradient(to left, black, transparent 80%);
+            -webkit-mask-image: linear-gradient(to left, black, transparent 80%);
+        }
+
+        .opportunity-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .opportunity-header {
+            margin-bottom: 4rem;
+        }
+
+        .opportunity-header h2 {
+            font-size: clamp(3rem, 6vw, 4.5rem);
+            color: var(--pure-white);
+            margin-bottom: 1rem;
+        }
+
+        .opportunity-header p {
+            font-size: 1.4rem;
+            color: var(--silver);
+            max-width: 750px;
+        }
+
+        .opportunity-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .opp-card {
+            background: rgba(11, 15, 26, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 2.5rem;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .opp-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-emerald);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 0;
+        }
+
+        /* REVERSE COLOR HOVER EFFECT */
+        .opp-card:hover {
+            border-color: transparent;
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(0, 200, 83, 0.3);
+        }
+
+        .opp-card:hover::after {
+            opacity: 1;
+        }
+
+        .opp-card > * {
+            position: relative;
+            z-index: 1;
+            transition: all 0.4s ease;
+        }
+
+        .opp-card h3 {
+            font-size: 1.6rem;
+            background: var(--gradient-fire);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .opp-card:hover h3 {
+            background: var(--midnight);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .opp-card p {
+            color: var(--silver);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .opp-card:hover p {
+            color: var(--midnight);
+        }
+
+        .opp-card p em {
+            display: block;
+            margin-top: 1rem;
+            color: rgba(255,255,255,0.5);
+            font-style: italic;
+            font-size: 0.95rem;
+        }
+
+        .opp-card:hover p em {
+            color: rgba(11,15,26,0.7);
+        }
+
+        .opportunity-question {
+            margin-top: 4rem;
+            padding: 2.5rem;
+            background: rgba(233, 30, 99, 0.1);
+            border-left: 5px solid var(--electric-magenta);
+            font-size: 1.4rem;
+            font-style: italic;
+            color: var(--pure-white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .opportunity-question::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 5px;
+            background: var(--gradient-fire);
+        }
+
+        /* Investment Section */
+        .investment-section {
+            background: linear-gradient(135deg, var(--midnight) 0%, #151D2E 50%, var(--navy) 100%);
+            position: relative;
+        }
+
+        .investment-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(ellipse at 20% 80%, rgba(255, 184, 0, 0.1) 0%, transparent 40%),
+                radial-gradient(ellipse at 80% 20%, rgba(233, 30, 99, 0.08) 0%, transparent 40%),
+                radial-gradient(ellipse at 60% 60%, rgba(124, 58, 237, 0.06) 0%, transparent 35%),
+                radial-gradient(ellipse at 30% 30%, rgba(0, 200, 83, 0.05) 0%, transparent 30%);
+        }
+
+        .investment-header {
+            text-align: center;
+            margin-bottom: 5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .investment-header h2 {
+            font-size: clamp(3rem, 6vw, 4.5rem);
+            color: var(--pure-white);
+            margin-bottom: 1.5rem;
+        }
+
+        .investment-header p {
+            font-size: 1.3rem;
+            color: var(--silver);
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        .investment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .invest-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 2.5rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+
+        .invest-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-gold);
+        }
+
+        .invest-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-gold);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 0;
+        }
+
+        /* REVERSE COLOR HOVER EFFECT */
+        .invest-card:hover {
+            transform: translateY(-8px);
+            border-color: transparent;
+            box-shadow: 0 25px 50px rgba(255, 184, 0, 0.3);
+        }
+
+        .invest-card:hover::after {
+            opacity: 1;
+        }
+
+        .invest-card > * {
+            position: relative;
+            z-index: 1;
+            transition: all 0.4s ease;
+        }
+
+        .invest-card h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--vivid-gold);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .invest-card:hover h3 {
+            color: var(--midnight);
+        }
+
+        .invest-card h3 svg {
+            width: 26px;
+            height: 26px;
+            stroke: var(--vivid-gold);
+            fill: none;
+            stroke-width: 2;
+            transition: all 0.4s ease;
+        }
+
+        .invest-card:hover h3 svg {
+            stroke: var(--midnight);
+        }
+
+        .invest-card p {
+            color: var(--silver);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .invest-card:hover p {
+            color: var(--midnight);
+        }
+
+        .investment-closing {
+            margin-top: 5rem;
+            text-align: center;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 500;
+            color: var(--pure-white);
+            padding: 2.5rem;
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Call to Action Section */
+        .cta-section {
+            background: var(--midnight);
+            padding: 8rem 2rem;
+            position: relative;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('UGA%20OU.jpg') center/cover no-repeat; /* Georgia arena */
+            opacity: 0.05;
+        }
+
+        .cta-blocks {
+            display: grid;
+            gap: 2.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-block {
+            padding: 3rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.02);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-block::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--pure-white);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 0;
+        }
+
+        /* REVERSE COLOR HOVER EFFECT */
+        .cta-block:hover {
+            transform: translateY(-5px);
+            border-color: transparent;
+            box-shadow: 0 20px 50px rgba(255, 255, 255, 0.1);
+        }
+
+        .cta-block:hover::after {
+            opacity: 1;
+        }
+
+        .cta-block > * {
+            position: relative;
+            z-index: 1;
+            transition: all 0.4s ease;
+        }
+
+        .cta-block.primary {
+            background: var(--gradient-fire);
+            border: none;
+        }
+
+        .cta-block.primary::after {
+            background: var(--gradient-purple);
+        }
+
+        .cta-block h3 {
+            font-size: 2.2rem;
+            color: var(--pure-white);
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-block:hover h3 {
+            color: var(--midnight);
+        }
+
+        .cta-block.primary:hover h3 {
+            color: var(--pure-white);
+        }
+
+        .cta-block p {
+            color: var(--silver);
+            font-size: 1.15rem;
+            line-height: 1.8;
+        }
+
+        .cta-block:hover p {
+            color: var(--navy);
+        }
+
+        .cta-block.primary p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .cta-block.primary:hover p {
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .cta-label {
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            background: var(--gradient-ocean);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.75rem;
+            display: inline-block;
+        }
+
+        .cta-block:hover .cta-label {
+            background: var(--gradient-fire);
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        .cta-block.primary .cta-label {
+            color: rgba(255, 255, 255, 0.7);
+            background: none;
+            -webkit-text-fill-color: rgba(255, 255, 255, 0.7);
+        }
+
+        .cta-block.primary:hover .cta-label {
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Final Section */
+        .final-section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: var(--gradient-hero);
+            position: relative;
+            overflow: hidden;
+            padding: 6rem 2rem;
+        }
+
+        .final-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('UF%20Lights.jpg') center/cover no-repeat; /* Florida arena phone lights */
+            opacity: 0.15;
+            filter: grayscale(20%);
+        }
+
+        .final-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(ellipse at 50% 50%, rgba(233, 30, 99, 0.2) 0%, transparent 60%),
+                radial-gradient(ellipse at 20% 80%, rgba(0, 212, 255, 0.1) 0%, transparent 40%),
+                radial-gradient(ellipse at 80% 20%, rgba(255, 184, 0, 0.1) 0%, transparent 40%),
+                radial-gradient(ellipse at 15% 30%, rgba(124, 58, 237, 0.12) 0%, transparent 35%),
+                radial-gradient(ellipse at 85% 70%, rgba(0, 200, 83, 0.08) 0%, transparent 35%);
+        }
+
+        .final-content {
+            position: relative;
+            z-index: 1;
+            max-width: 950px;
+        }
+
+        .final-content h2 {
+            font-size: clamp(3.5rem, 10vw, 7rem);
+            color: var(--pure-white);
+            margin-bottom: 2rem;
+            text-shadow: 0 0 80px rgba(233, 30, 99, 0.4);
+        }
+
+        .final-intro {
+            font-size: 1.3rem;
+            color: var(--silver);
+            max-width: 750px;
+            margin: 0 auto 3rem;
+            line-height: 1.8;
+        }
+
+        .final-questions {
+            margin-bottom: 3rem;
+        }
+
+        .final-questions p {
+            font-size: 1.4rem;
+            color: var(--silver);
+            font-style: italic;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .final-questions p:hover {
+            color: var(--electric-magenta);
+            transform: scale(1.02);
+        }
+
+        .final-statement {
+            margin-bottom: 3rem;
+        }
+
+        .final-statement p {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: var(--pure-white);
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.05em;
+        }
+
+        .final-statement p.highlight {
+            font-size: 2rem;
+            background: var(--gradient-fire);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: drop-shadow(0 0 20px rgba(233, 30, 99, 0.5));
+        }
+
+        .final-tagline {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            letter-spacing: 0.15em;
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-top: 3rem;
+            filter: drop-shadow(0 0 30px rgba(255, 184, 0, 0.4));
+        }
+
+        /* Footer */
+        footer {
+            background: var(--midnight);
+            padding: 4rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 3px;
+            background: var(--gradient-fire);
+        }
+
+        .footer-logo {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.5rem;
+            letter-spacing: 0.15em;
+            color: var(--wcga-teal);
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo span {
+            color: var(--wcga-teal);
+        }
+
+        footer p {
+            color: var(--silver);
+            font-size: 1rem;
+        }
+
+        footer a {
+            background: var(--gradient-fire);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+            transition: filter 0.3s ease;
+        }
+
+        footer a:hover {
+            filter: brightness(1.2);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-15px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-8px);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem 1.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            section {
+                padding: 6rem 1.5rem;
+            }
+
+            .pvm-grid,
+            .values-grid,
+            .opportunity-grid,
+            .investment-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-tagline {
+                font-size: 1.2rem;
+            }
+
+            .belief-statement {
+                font-size: 1.8rem;
+            }
+
+            .value-card,
+            .pvm-card,
+            .opp-card,
+            .invest-card,
+            .cta-block {
+                padding: 2rem;
+            }
+
+            .final-questions p {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <a href="#" class="nav-logo">WCGA</a>
+        <ul class="nav-links">
+            <li><a href="#belief">Belief</a></li>
+            <li><a href="#vision">Vision</a></li>
+            <li><a href="#values">Values</a></li>
+            <li><a href="#opportunity">Opportunity</a></li>
+            <li><a href="#action">Take Action</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-badge">Women's Collegiate Gymnastics Association</div>
+            <h1>Building the <span>Premier Women's Collegiate Sport</span></h1>
+            <p class="hero-tagline">A movement to elevate women's collegiate gymnastics to its rightful place—commanding attention, resources, and respect.</p>
+            <a href="#belief" class="hero-cta">
+                Join the Movement
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </a>
+        </div>
+        <div class="scroll-indicator">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 5v14M19 12l-7 7-7-7"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Core Belief Section -->
+    <section class="core-belief" id="belief">
+        <div class="container">
+            <div class="belief-content fade-in">
+                <div class="section-label">Core Belief</div>
+                <p class="belief-statement">
+                    <strong>Gymnastics provides the foundation for developing daring, strong, and confident women.</strong>
+                </p>
+                <p class="belief-detail">
+                    This sport transforms young girls into exceptional leaders who shape industries, strengthen communities, and inspire generations. The impact extends far beyond the competition floor: families benefit from shared commitment and values, businesses gain principled and driven leaders, and communities are enriched by women who lead with confidence and integrity.
+                </p>
+                <p class="belief-detail" style="margin-top: 1.5rem;">
+                    At an individual level, gymnastics instills habits of hard work, perseverance, sacrifice, and delayed gratification—qualities that are increasingly rare, yet essential for long-term personal fulfillment and professional success.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Purpose, Vision, Mission Cards -->
+    <section class="pvm-section" id="vision">
+        <div class="container">
+            <div class="section-label fade-in" style="text-align: center; margin-bottom: 3rem;">Our Foundation</div>
+            <div class="pvm-grid">
+                <div class="pvm-card fade-in">
+                    <h3>Purpose</h3>
+                    <p><strong>To champion the growth and promotion of women's collegiate gymnastics.</strong></p>
+                    <p style="margin-top: 1rem;">We exist to elevate this sport to its rightful place as the premier women's collegiate sport. Through advocacy, innovation, and collaboration, we create opportunities for female student-athletes to excel academically and athletically, and to become leaders who will transform their worlds.</p>
+                </div>
+                <div class="pvm-card fade-in">
+                    <h3>Vision</h3>
+                    <p><strong>Women's collegiate gymnastics is recognized as the premier women's collegiate sport, filling arenas with passionate fans and creating transformative opportunities for student-athletes.</strong></p>
+                    <p style="margin-top: 1rem;">We see a future where the Olympic passion that makes gymnastics the number one watched sport globally translates into year-round engagement collegiately. Where every meet at every level is an electric experience.</p>
+                </div>
+                <div class="pvm-card fade-in">
+                    <h3>Mission</h3>
+                    <p><strong>To strengthen and expand the reach of women's collegiate gymnastics, establishing it as the leading female collegiate sport through connection, empowerment, and education.</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Details -->
+    <div class="mission-full">
+        <div class="mission-content">
+            <h2 class="fade-in">How We Achieve This</h2>
+            <ul class="mission-list">
+                <li class="fade-in">Advocating for resources and recognition at every level</li>
+                <li class="fade-in">Innovating how we present, promote, and grow the sport</li>
+                <li class="fade-in">Building a collaborative community where every program's success elevates all programs</li>
+                <li class="fade-in">Protecting our athletes and the integrity of our sport</li>
+                <li class="fade-in">Demonstrating that investing in women's gymnastics creates impact far beyond competition</li>
+            </ul>
+            <div class="mission-callout fade-in">
+                This is more than an association. This is a movement.
+            </div>
+        </div>
+    </div>
+
+    <!-- Values Section -->
+    <section class="values-section" id="values">
+        <div class="container">
+            <div class="values-header fade-in">
+                <div class="section-label">Our Commitment</div>
+                <h2>The Values That Drive Us</h2>
+            </div>
+            <div class="values-grid">
+                <!-- Leadership -->
+                <div class="value-card fade-in">
+                    <div class="value-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <h3>Leadership</h3>
+                    <h4>We Lead by Example</h4>
+                    <p>You lead by example, demonstrating the standard you want others to follow. You contribute actively to decision-making, bringing your expertise to shape our collective direction. We show initiative and don't wait for perfect conditions—we identify what needs to happen and make it happen.</p>
+                    <p><em>We lead our institutions. We lead our conferences. We lead the nation in proving what women's collegiate sport can become.</em></p>
+                </div>
+
+                <!-- Innovation -->
+                <div class="value-card fade-in">
+                    <div class="value-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83"/><circle cx="12" cy="12" r="4"/></svg>
+                    </div>
+                    <h3>Innovation</h3>
+                    <h4>We Pioneer the Future</h4>
+                    <p>You are a pioneer, constantly seeking ways to elevate the sport through imaginative thinking and bold action. You actively seek solutions to existing challenges, leveraging technology and fresh perspectives.</p>
+                    <p><em>The premier women's collegiate sport won't be built by doing what's always been done. We innovate in how we present our sport, engage our fans, develop our athletes, and tell our story.</em></p>
+                </div>
+
+                <!-- Grit -->
+                <div class="value-card fade-in">
+                    <div class="value-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h3>Grit</h3>
+                    <h4>We Persevere Through Challenge</h4>
+                    <p>You inspire others with your commitment to excellence, regardless of obstacles. You embrace a growth mindset, viewing setbacks not as failures but as essential steps toward mastery.</p>
+                    <p><em>Building the premier women's collegiate sport won't be easy. Grit is what separates programs that talk about growth from programs that achieve it. We don't just endure challenges; we use them as fuel.</em></p>
+                </div>
+
+                <!-- Connection -->
+                <div class="value-card fade-in">
+                    <div class="value-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    </div>
+                    <h3>Connection</h3>
+                    <h4>We Strengthen Through Unity</h4>
+                    <p>You communicate openly and respectfully, ensuring others feel heard, valued, and included. You collaborate willingly, seeking opportunities to support others and strengthen our collective impact.</p>
+                    <p><em>We are stronger together. A program that succeeds and then lifts others creates momentum that benefits everyone. We build genuine relationships and honor those who came before us.</em></p>
+                </div>
+
+                <!-- Stewardship -->
+                <div class="value-card fade-in">
+                    <div class="value-icon">
+                        <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                    </div>
+                    <h3>Stewardship</h3>
+                    <h4>We Protect What Matters</h4>
+                    <p>You protect the well-being of every athlete, ensuring they feel supported, safe, and valued. You use resources wisely, making decisions that strengthen both present success and future growth.</p>
+                    <p><em>We are stewards of something precious: the dreams of young women, the traditions built by programs before us, and the potential of a sport that can inspire millions.</em></p>
+                </div>
+
+                <!-- Passion -->
+                <div class="value-card fade-in">
+                    <div class="value-icon">
+                        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <h3>Passion</h3>
+                    <h4>We Ignite Enthusiasm</h4>
+                    <p>You bring energy and enthusiasm to everything you do, inspiring others through your example. You stay motivated even when challenges arise, demonstrating an unwavering commitment to our mission.</p>
+                    <p><em>Passion is contagious. Our passion fills arenas. Our passion attracts sponsors. Our passion transforms casual observers into lifelong fans.</em></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Opportunity Section -->
+    <section class="opportunity-section" id="opportunity">
+        <div class="container">
+            <div class="opportunity-content">
+                <div class="opportunity-header fade-in">
+                    <div class="section-label">The Moment Is Now</div>
+                    <h2>The Opportunity Before Us</h2>
+                    <p>Women's collegiate gymnastics is the female equivalent of football on the male side. We have everything required to become the premier women's collegiate sport.</p>
+                </div>
+                <div class="opportunity-grid">
+                    <div class="opp-card fade-in">
+                        <h3>World-Class Athleticism</h3>
+                        <p>Combined with artistic expression. Athletes who have dedicated thousands of hours to their craft emerge as disciplined, resilient, and focused individuals ready to excel in any arena.</p>
+                    </div>
+                    <div class="opp-card fade-in">
+                        <h3>Unmatched Fan Experience</h3>
+                        <p>The energy in a packed gymnastics arena is electric. The pageantry rivals any collegiate event. Fans don't just watch; they participate—creating an atmosphere that's intimate yet explosive.</p>
+                    </div>
+                    <div class="opp-card fade-in">
+                        <h3>Student-Athletes Who Do It All</h3>
+                        <p>Our gymnasts maintain exceptional GPAs while training 20+ hours per week. They lead student organizations, volunteer in communities, and graduate ready to make an immediate impact.</p>
+                    </div>
+                    <div class="opp-card fade-in">
+                        <h3>Proven Global Appeal</h3>
+                        <p>Olympic women's gymnastics is the number one most-watched sport globally during the Games. The audience exists. The appetite is undeniable. Our opportunity is to channel that passion into sustained growth.</p>
+                    </div>
+                </div>
+                <div class="opportunity-question fade-in">
+                    The question isn't whether we can become the premier women's collegiate sport. The question is: will we invest what it takes to claim that position?
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment Section -->
+    <section class="investment-section">
+        <div class="container">
+            <div class="investment-header fade-in">
+                <div class="section-label">Commitment Required</div>
+                <h2>The Investment Required</h2>
+                <p>This vision demands more than passive membership. It requires active investment from every program, every coach, every administrator who believes in what we're building.</p>
+            </div>
+            <div class="investment-grid">
+                <div class="invest-card fade-in">
+                    <h3>
+                        <svg viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                        Investment in Advocacy
+                    </h3>
+                    <p>Using your voice to elevate the sport at your institution, in your conference, and in the national conversation. Highlighting the academic excellence, leadership development, and commercial potential of women's gymnastics.</p>
+                </div>
+                <div class="invest-card fade-in">
+                    <h3>
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+                        Investment in Innovation
+                    </h3>
+                    <p>Pioneering new approaches to fan engagement, athlete development, and sport promotion. Embracing technology, creative choreography, and fresh perspectives that attract audiences beyond the traditional gymnastics world.</p>
+                </div>
+                <div class="invest-card fade-in">
+                    <h3>
+                        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        Investment in Collaboration
+                    </h3>
+                    <p>Recognizing that our collective success elevates every program. Sharing knowledge, resources, and best practices—supporting fellow members not as competitors but as partners in building something bigger.</p>
+                </div>
+                <div class="invest-card fade-in">
+                    <h3>
+                        <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        Investment of Belief
+                    </h3>
+                    <p>Committing to the long-term vision even when challenges arise. Showing up when it matters. Leading by example. Refusing to accept that women's gymnastics should be anything less than the premier women's collegiate sport.</p>
+                </div>
+                <div class="invest-card fade-in">
+                    <h3>
+                        <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        Investment of Revenue & Resources
+                    </h3>
+                    <p>Raising money and allocating the financial capital to operate at a premier level. Prioritizing investment in marketing budgets and staffing structures that mirror the elite status of the sport.</p>
+                </div>
+            </div>
+            <div class="investment-closing fade-in">
+                This is the investment that transforms our association into a movement.
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta-section" id="action">
+        <div class="container">
+            <div class="section-label fade-in" style="text-align: center; margin-bottom: 3rem;">The Call to Action</div>
+            <div class="cta-blocks">
+                <div class="cta-block primary fade-in">
+                    <div class="cta-label">To Our Member Programs</div>
+                    <h3>This Is Your Association</h3>
+                    <p>Your investment determines its strength. The premier women's collegiate sport won't be built by a handful of programs. It will be built by every program choosing to invest more: more advocacy, more innovation, more collaboration, more belief.</p>
+                </div>
+                <div class="cta-block fade-in">
+                    <div class="cta-label">To Fans & Supporters</div>
+                    <h3>You're Witnessing Something Special</h3>
+                    <p>Women's collegiate gymnastics combines Olympic-level athleticism with the pageantry and passion of premier collegiate sport. Your attendance, your enthusiasm, and your advocacy help us reach more people and create more opportunities.</p>
+                </div>
+                <div class="cta-block fade-in">
+                    <div class="cta-label">To Potential Sponsors & Partners</div>
+                    <h3>These Athletes Embody Your Brand Values</h3>
+                    <p>They demonstrate discipline, resilience, leadership, and grace under pressure. Investing in women's collegiate gymnastics isn't just good corporate citizenship; it's smart business.</p>
+                </div>
+                <div class="cta-block fade-in">
+                    <div class="cta-label">To Prospective Programs</div>
+                    <h3>Join Us in Building Something Historic</h3>
+                    <p>The premier women's collegiate sport needs your voice, your athletes, and your energy.</p>
+                </div>
+                <div class="cta-block fade-in">
+                    <div class="cta-label">To the World</div>
+                    <h3>Women's Collegiate Gymnastics Is Ready for You</h3>
+                    <p>Experience the energy. Witness the athleticism. Feel the passion.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final Section -->
+    <section class="final-section">
+        <div class="final-content">
+            <div class="section-label fade-in">This Is Our Moment</div>
+            <h2 class="fade-in">This Is Our Moment</h2>
+            <p class="final-intro fade-in">
+                The foundation has been laid. The athletes have proven themselves. The audience exists globally. Now is the time to build. Now is the time to invest. Now is the time to establish women's collegiate gymnastics as the premier women's collegiate sport.
+            </p>
+            <p class="fade-in" style="font-size: 1.15rem; color: var(--silver); margin-bottom: 3rem;">
+                This is bigger than any single program. This is bigger than any single season. This is about creating a legacy that transforms women's collegiate athletics.
+            </p>
+            <div class="final-questions fade-in">
+                <p>Will you invest in that future?</p>
+                <p>Will you use your voice, your energy, your resources to elevate this sport?</p>
+                <p>Will you help us demonstrate that women's collegiate gymnastics deserves recognition as the premier women's collegiate sport?</p>
+            </div>
+            <div class="final-statement fade-in">
+                <p>The world is watching.</p>
+                <p>The opportunity is here.</p>
+                <p class="highlight">The time is now.</p>
+            </div>
+            <div class="final-tagline fade-in">
+                This Is The WCGA Way
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">WCGA</div>
+        <p>Women's Collegiate Gymnastics Association</p>
+        <p style="margin-top: 0.5rem;"><a href="https://wcgagym.com" target="_blank">wcgagym.com</a> · <a href="https://wcgagym.com/cggi/" target="_blank">CGGI</a></p>
+        <p style="margin-top: 2rem; font-size: 0.85rem; opacity: 0.6;">© 2025 WCGA. Building the Premier Women's Collegiate Sport.</p>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Fade in on scroll with stagger
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, index * 50);
+                }
+            });
+        }, observerOptions);
+
+        fadeElements.forEach(el => observer.observe(el));
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
